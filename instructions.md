@@ -1,4 +1,4 @@
-#WorkshopPLUS - System Center Configuration Manager: Concepts and Administration Advanced (1902)
+#WorkshopPLUS - System Center Configuration Manager: Advanced Concepts and Cloud Services (1906)
 
 ##Objective
 ###Learning Objective - Module 1
@@ -228,7 +228,7 @@ Click Next > to advance to the next exercise.
 In this exercise you will: 
 - Configure AD Connect.
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Open the web browser and go to +++https://www.microsoft.com/en-us/download/details.aspx?id=47594+++ and click **Download** to get the latest version of Azure AD Connect.
@@ -240,7 +240,7 @@ In this exercise you will:
 1. [] Select Customize
 !IMAGE[Screenshot](Screens/zhxzr3j0.jpg)
 1. [] On the required Components Select 
-	- Use and existing SQL server and enter +++NYCCAS+++ as the name
+	- Use and existing SQL server and enter +++NYCCFG+++ as the name
 	- Use an existing service account. Enter +++Contoso\administrator+++ and +++Pa$$w0rd+++
 	!IMAGE[Screenshot](Screens/zra30qfz.jpg) 
 	 then click **INSTALL**
@@ -292,7 +292,7 @@ In this exercise you will:
 > [!KNOWLEDGE] Device writeback is used to enable conditional access based on devices to AD FS (2012 R2 or higher) protected devices, this is not needed in this lab and is provided just for awareness.
 > [!KNOWLEDGE] If you like you can skip this exercise as both Device Writeback and Hybrid Azure AD join are not needed elsewhere in this Lab.
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 
@@ -382,17 +382,17 @@ In this exercise you will:
 - Approve Permissions 
 - Review Azure Discovery Agent Log Files
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Open the Configuration Manager Console 
 
->[!ALERT] Go to Monitoring > Database Replication - if you see that the *link has failed* restart the NYCCAS first and then NYCCFG
+>[!ALERT] Go to Monitoring > Database Replication - if you see that the *link has failed* restart the NYCCFG first and then NYCCFG
 !IMAGE[kqs3gylx.jpg](kqs3gylx.jpg) 
 **DO NOT CONTINUE UNTIL THE PROBLEM IS RESOLVED**
 !IMAGE[hg4jtlop.jpg](hg4jtlop.jpg)
 Hit refresh and check that the problem is resolved
-NYCCAS
+NYCCFG
 !IMAGE[mte602ud.jpg](mte602ud.jpg)
 NYCCFG
 !IMAGE[1i7n0835.jpg](1i7n0835.jpg)
@@ -518,7 +518,7 @@ proceed as follow:
 !IMAGE[Screenshot](Screens/dq43xanu.jpg) and click **Yes** to confirm
 > [!ALERT] Note: Once you've granted permissions there is a wait period before the permissions are fully applied, wait around 5 minutes before proceeding with the next step.
 
-27. [] Connect to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+27. [] Connect to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] On the Configure Discovery Settings, leave as default and click **Next** twice then **Close**
@@ -565,7 +565,7 @@ and click Register
 
 ### Cloud Distribution Point Deployment
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Go to Administration Workspace on the Configuration Manager Console.
@@ -666,7 +666,7 @@ Click Next > to advance to the next exercise.
 In this exercise you will:
 - Configure Management Point as Gateway for Cloud Management.
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 
@@ -737,7 +737,7 @@ In this exercise you will:
 - Create a Cloud Service Settings for Users 
 - Create Pilot - Co-Management Collection
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Open Configuration Manager Console > Administration Workspace > Client Settings
@@ -794,7 +794,7 @@ Click Next > to advance to the next exercise.
 ===
 #Module 2, Lab 1, Exercise 3 - Prepare Intune for co-management
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] In the Configuration Manager console, go to Administration > Overview > Cloud Services > Co-management
@@ -850,7 +850,7 @@ Click Next > to advance to the next exercise.
 1. [] Click on App Information: 
 	- Description: +++Configuration Manager Client+++ 
 	- Publisher: +++Microsoft+++ 
-	- Command Line Argument: **Copy the content from the file +++\\\\NYCCAS\\admin$\temp\\Intunecmd.txt+++**
+	- Command Line Argument: **Copy the content from the file +++\\\\NYCCFG\\admin$\temp\\Intunecmd.txt+++**
 	!IMAGE[Screenshot](Screens/sh1ub0no.jpg)
 1. [] Click **OK** then click **Add**
 1. [] Ignore the initial warning
@@ -864,7 +864,7 @@ Click Next > to advance to the next exercise.
 1. [] Select *Included Groups*
 1. [] In the Select groups to include select **Lab SCCM Install Group** and click **Select**
 !IMAGE[Screenshot](Screens/gwjseoxa.jpg)
->[!ALERT] If you do not see the group in the list go to @lab.VirtualMachine(NYCCAS).SelectLink and enter the password: +++@lab.VirtualMachine(NYCCAS).Password+++, open the Command Prompt (Admin), type +++powershell+++ and press Enter, then type +++Start-ADSyncSyncCycle -PolicyType Delta+++ and press Enter
+>[!ALERT] If you do not see the group in the list go to @lab.VirtualMachine(NYCCFG).SelectLink and enter the password: +++@lab.VirtualMachine(NYCCFG).Password+++, open the Command Prompt (Admin), type +++powershell+++ and press Enter, then type +++Start-ADSyncSyncCycle -PolicyType Delta+++ and press Enter
 
 33. [] Click **OK** twice, and click **Save**
 !IMAGE[Screenshot](Screens/po1s2lqz.jpg)
@@ -1170,7 +1170,7 @@ Click Next > to advance to the next exercise.
 In this exercise you will:
 - Explore Dashboard for Co-Management
 
-1. [] Log on to @lab.VirtualMachine(NYCCAS).SelectLink using the following credentials:   
+1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Open Configuration Manager Console and click on Monitoring Workspaces
