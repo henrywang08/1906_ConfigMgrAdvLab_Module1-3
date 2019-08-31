@@ -24,11 +24,13 @@ In this exercise you will:
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. [] Go to +++https://portal.office.com+++ 
-1. [] Click *Resources* tab, in the lab menu, and use the LAB Office 365 credentials specified under your Lab environment 
+1. [] Click *Resources* tab, in the lab menu, and use the LAB Office 365 credentials specified under your Lab environment
+
 !IMAGE[rr8li18k.jpg](rr8li18k.jpg)
+
 > [!NOTE] These are your tenant credentials and you shall use it every time you sign-in a Cloud portal as admin
 
-4. [] At *Stay signed in*, select *Don't show this again* and click **Yes**
+1. [] At *Stay signed in*, select *Don't show this again* and click **Yes**
 !IMAGE[1rq5rfi9.png](1rq5rfi9.png)
 
 1. [] Navigate to Billing and click *Licenses*
