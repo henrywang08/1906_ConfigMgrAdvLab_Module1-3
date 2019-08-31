@@ -2,14 +2,14 @@
 
 ##Objective
 ###Learning Objective - Module 1
-The main objective of this session is for the attendees to learn more about Cloud Management Gateway and Cloud Distribution Point.
+The main objective of this session is for the attendees to learn more about Cloud Management Gateway.
 ###Learning Objective - Module 2
-One of the goals of the session will be for the attendees to gain experience and knowledge on how to install, configure and manage co-management within configuration manager. This will include the pre-requirements of Azure, certificates, cloud management gateway and cloud distribution point.
+One of the goals of the session will be for the attendees to gain experience and knowledge on how to install, configure and manage co-management within configuration manager. This will include the pre-requirements of Azure, certificates, and cloud management gateway.
 ###Learning Objective - Module 3
 Finally, the attendees will get some hands-on experience with Windows Autopilot, and how to setup and manage a device inside the portal, the attendees will be able to configure a profile and deploy the profiles to the sample devices within Windows Autopilot.
 
 ##Scenario
-You are working with Contoso customer to implement, Cloud Management Gateway and Cloud Distribution Point, Co-Management in Configuaration Manager and Autopilot. Let's guide you to the different requirements for a successfull implementation
+You are working with Contoso customer to implement, Cloud Management Gateway, Co-Management in Configuaration Manager and Autopilot. Let's guide you to the different requirements for a successfull implementation
 
 ===
 #Module 1, Lab 1, Exercise 1 - Configure EM+S and Azure Tenant
@@ -73,11 +73,10 @@ You have successfully:
 
 Click Next > to advance to the next exercise.
 ====
-#Module 1, Lab 1, Exercise 2 - Create Certificates for Cloud Distribution Point and Cloud Management Gateway
+#Module 1, Lab 1, Exercise 2 - Create Certificates for Cloud Management Gateway
 
 ##Scenario
 In this exercise you will:
-- Create a Certificate for the CDP from a Local Certificate Authority
 - Create a Certificate for the CMG from a Local Certificate Authority
 
 > [!ALERT] Since we are working with certificates is **paramount** that the local VMs' time is correct. Confirm the local time is correct and change the time zone as needed.
@@ -96,14 +95,14 @@ In this exercise you will:
 1. [] In the Certificate Properties dialog box, in the Subject tab, for the Subject name, choose **Common name** as the Type. 
 !IMAGE[Screenshot](Screens/hcrc5hbs.jpg)
 1. [] In the Value box, specify your choice of service name and your domain name by using an FQDN format. 
-For example, use: CDP<3digitairportcode+todaysdate+yourinitials>.contoso.com e.g. CDPMAD2412ac.contoso.com
+For example, use: <3digitairportcode+todaysdate+yourinitials>.contoso.com.contoso.com e.g. MAD21052018ac.contoso.com
 1. [] Choose **Add**, and then choose **OK** to close the Certificate Properties dialog box
 !IMAGE[2c9olya1.jpg](2c9olya1.jpg)
 1. [] On the Request Certificates page, choose ConfigMgr Cloud Server Certificate from the list of available certificates, and then choose **Enroll**
 !IMAGE[Screenshot](Screens/2oauj5c1.jpg)
 1. [] On the Certificates Installation Results page, wait until the certificate is installed, and then choose **Finish**.
 
-> [!ALERT] You will use DNS to create an alias (CNAME record) to map this service name (e.g. CDPMAD2412ac.contoso.com) to an IP address from Microsoft Azure.
+> [!ALERT] You will use DNS to create an alias (CNAME record) to map this service name (e.g. MAD21052018ac.contoso.com) to a Cloud Service in Microsoft Azure.
 
 12. [] In the Certificates (Local Computer) console, right-click the certificate that you have just enrolled, choose All Tasks, and then choose Export
 !IMAGE[Screenshot](Screens/vwhgubpa.jpg)
@@ -115,23 +114,14 @@ For example, use: CDP<3digitairportcode+todaysdate+yourinitials>.contoso.com e.g
 !IMAGE[Screenshot](Screens/f3vokpuh.jpg)
 1. [] On the Password page, specify +++Pa$$w0rd+++ to protect the exported certificate with its private key, and then choose **Next** (leave default for encryption)
 !IMAGE[1fkdeav9.png](1fkdeav9.png)
-1. [] On the File to Export page, specify the name of the file that you want to export, and then choose **Next**. The file name to use is: +++contosocdp-pk.pfx+++
+1. [] On the File to Export page, specify the name of the file that you want to export, and then choose **Next**. The file name to use is: +++contosocmg-pk.pfx+++
 !IMAGE[Screenshot](Screens/spcsxyld.jpg)
 1. [] To close the wizard, choose **Finish** in the Certificate Export Wizard page, and then choose **OK** in the confirmation dialog box. 
 !IMAGE[Screenshot](Screens/vke0p0kb.jpg)
 
-> [!ALERT] Store the file securely and ensure that you can access it from the System Center Configuration Manager console. The certificate is now ready to be imported when you create a cloud-based distribution point.
+> [!ALERT] Store the file securely and ensure that you can access it from the System Center Configuration Manager console. The certificate is now ready to be imported when you create a Cloud Management Gateway.
 
-19. [] In the console, expand Certificates (Local Computer), and then choose **Personal**
-1. [] Right-click Certificates, choose All Tasks, and then choose **Request New Certificate**
-1. [] At Before You Begin page, choose **Next**
-1. [] At Select Certificate Enrollment Policy page, choose **Next**. 
-1. [] On the Request Certificates page, identify the *ConfigMgr Cloud Server Certificate* from the list of available certificates, and then choose **More information is required to enroll for this certificate. Click here to configure settings**
-1. [] In the Certificate Properties dialog box, in the Subject tab, for the Subject name, choose **Common name** as the Type.
-1. [] In the Value box, specify your choice of service name and your domain name by using an FQDN format. 
-For example, use: <3digitairportcode+todaysdate+yourinitials>.contoso.com e.g. MAD21052018ac.contoso.com
-
-> [!ALERT] Like the Cloud Distribution Point the Cloud Management Point short name must be unique in Azure. To ensure you are using a unique name go to +++https://portal.azure.com+++ then navigate to **+Create a Resource**, search for+++Cloud Service+++ and click **Create**
+> [!ALERT] The Cloud Management Gateway short name must be unique in Azure. To ensure you are using a unique name go to +++https://portal.azure.com+++ then navigate to **+Create a Resource**, search for+++Cloud Service+++ and click **Create**
 !IMAGE[5.PNG](5.PNG)
 and verify that the DNS name is available in your Location (e.g. West Europe).
 This is an example of when it is not available
@@ -142,21 +132,6 @@ This is an example of when it is available
 !IMAGE[auh1kpk8.jpg](auh1kpk8.jpg)
 **Then click OK**
 !IMAGE[oqx6ih3z.jpg](oqx6ih3z.jpg)
-
-26. [] At the *Certificate Properties* windows, choose **Add**, and then choose **OK** to close the Certificate Properties dialog box
-1. [] On the Request Certificates page, choose ConfigMgr Cloud Server Certificate from the list of available certificates, and then choose **Enroll**
-1. [] On the Certificates Installation Results page, wait until the certificate is installed, and then choose **Finish**
-
-> [!ALERT] You will use DNS to create an alias (CNAME record) to map this service name to a <3digitairportcode+todaysdate+yourinitials>.cloudapp.net DNS name created in Azure.
-
-29. [] In the Certificates (Local Computer) console, right-click the certificate that you just installed, choose **All Tasks**, and then choose **Export**
-1. [] In the Certificates Export Wizard, choose **Next**
-1. [] On the Export Private Key page, choose **Yes, export the private key**, and then choose **Next**.
-1. [] On the Export File Format page, ensure that the Personal Information Exchange - PKCS #12 (.PFX) option is selected, then click **Next**
-1. [] On the Password page, specify +++Pa$$w0rd+++ to protect the exported certificate with its private key, and then choose **Next**
-1. [] On the File to Export page, specify the name of the file that you want to export, and then choose **Next**. Use as File name: +++contosocmg-pk.pfx+++
-1. [] To close the wizard, choose **Finish** in the Certificate Export Wizard page, and then choose **OK** in the confirmation dialog box. 
-!IMAGE[Screenshot](Screens/vzhhs5fs.jpg)
 
 Congratulations! 
 You have successfully:
@@ -451,11 +426,10 @@ You have successfully:
 Click Next > to advance to the next exercise.
 
 ===
-#Module 1, Lab 3, Exercise 2 - Install CDP and CMG
+#Module 1, Lab 3, Exercise 2 - Install Cloud Management Gateway
 
 ##Scenario
 In this exercise you will:
-- Install and Configure Cloud Distribution Point - ARM
 - Install and Configure Cloud Management Gateway - ARM
 
 ### Confirm that the required Cloud Resource providers are Registered
@@ -474,28 +448,6 @@ and click Register
 1. [] wait for the registrations to complete
 !IMAGE[registered.PNG](registered.PNG)
 
-### Cloud Distribution Point Deployment
-
-1. [] Log on to @lab.VirtualMachine(NYCCFG).SelectLink using the following credentials:   
-	   	- User name: Contoso\\Administrator  
-		- Password: +++Pa$$w0rd+++
-1. [] Go to Administration Workspace on the Configuration Manager Console.
-1. [] Expand Cloud Services > Right Click Cloud Distribution Point Click on Create Cloud Distribution Point. 
-!IMAGE[ug1ubx8t.jpg](ug1ubx8t.jpg)
-1. [] Click **Sign in...** and login with your Global Admin O365 credentials
-1. [] When all Subscription ID and Azure App name are populated, click **Next**
-1. [] On Certificate file click Browse
-!IMAGE[3adg189y.jpg](3adg189y.jpg)
-1. [] Type +++\\\\NYCCL1\\C$\\Users\\Administrator\\contosocdp-pk.pfx+++ and click **Open**
-1. [] Type +++Pa$$w0rd+++ for the password and click **OK**
-1. [] Click on *Create new*, to create e new Resource Group and click **Next**
-!IMAGE[ve0obe3h.jpg](ve0obe3h.jpg)
-1. [] On the Configure Alerts leave as default and click **Next** twice and then **Close**
-!IMAGE[10kg1hvc.jpg](10kg1hvc.jpg)
-1. [] The CDP is fully operational when in the console, under Status Description you see the message *Provisioning completed*
-!IMAGE[7u5ybfbq.jpg](7u5ybfbq.jpg)
-
-> [!KNOWLEDGE] You can monitor the deployment of the CloudDP from +++\\\\NYCCFG\\SMS_NYC\\Logs\\CloudMgr.log+++ it will take approximately 15 minutes (when you see in the log BusyRole we are nearly there).
 
 ###  Cloud Management Gateway Deployment
 1. [] Go to Administration Workspace on the Configuration Manager Console.
@@ -517,7 +469,7 @@ and click Register
 1. [] Click on **Certificates...** and then click **Add** and browse for the +++\\\\NYCCL1\C$\\Users\\Administrator\\ContosoRootCA.cer+++ and click **Open**, then click **OK**
 !IMAGE[Screenshot](Screens/pykfvvbd.jpg)
 1. [] UNCHECK the **Verify Client Certificate Revocation** 
-1. [] UNCHECK **Allow CMG to function as cloud distribution point..** and click **Next**
+1. [] Check **Allow CMG to function as cloud distribution point..** and click **Next**
 1. [] Leave default and click **Next** twice then **Close**
 !IMAGE[vcqj2i9g.jpg](vcqj2i9g.jpg)
 
@@ -529,7 +481,7 @@ Configuration Manager starts setting up the service. After you close the wizard,
 Congratulations! 
 You have successfully:
 
-- Installed and Configure CDP and CMG.
+- Installed and Configure CMG.
 
 Click Next > to advance to the next exercise.
 
@@ -553,15 +505,8 @@ In this exercise you will:
 > [!KNOWLEDGE] if you don't remember this is the value under Configuration Manager console > Administration > Overview > Cloud Services > Cloud Management Gateway (Cloud Service Name)
 !IMAGE[kb4i62ua.png](kb4i62ua.png)
 
-6. [] Fully qualified name: type the FQDN for the CMG e.g. mad21052018ac.**cloudapp.net** and click OK
-
-1. [] Right-click New Alias (CNAME)
-1. [] Alias Name: type the type the short name of the CDP e.g. cdpmad1804ac
-
-> [!KNOWLEDGE] if you don't remember this is the value under Configuration Manager console > Administration > Overview > Cloud Services > Cloud Distribution Point (Cloud Service Name)
-
-9. [] Fully qualified name: type the Cloud Service Name that you saved for the Cloud Distribution Point e.g. cdpmad1804ac.**cloudapp.net** and click OK
-10. [] Open the command prompt and run a nslookup for the short names you provided in the CNAME and verify they can be resolved
+1. [] Fully qualified name: type the FQDN for the CMG e.g. mad21052018ac.**cloudapp.net** and click OK
+1. [] Open the command prompt and run a nslookup for the short names you provided in the CNAME and verify they can be resolved
 !IMAGE[q7ngpq97.jpg](q7ngpq97.jpg)
 
 Congratulations! 
@@ -880,71 +825,7 @@ You have successfully:
 Click Next > to advance to the next Module.
 
 ===
-#Module 3, Lab 1, Exercise 1 - Create a Machine for Autopilot testing
-
-##Scenario
-In this exercise you will:
-- Create a new Windows 10 VM 
-
-1. [] Log on to @lab.VirtualMachine(NYCPR2).SelectLink using the following credentials:
-	- User name: Contoso\\Administrator
-	- Password: +++Pa$$w0rd+++
-1. [] Open the Hyper-V Manager console
-1. [] Right-click NYCPR2 > New > Virtual machine…
-!IMAGE[ewgy4mii.png](ewgy4mii.png)
-1. [] At *Before You Begin* click **Next**
-!IMAGE[mheeybiw.png](mheeybiw.png)
-1. [] At *Specify name and location* type +++Test-autopilot+++ and click **Next**
-!IMAGE[nzjdoxyl.png](nzjdoxyl.png)
-1. [] At *Specify generation* select Generation 2 and click **Next**
-!IMAGE[tiqsh9ro.png](tiqsh9ro.png)
-1. [] At *Assign memory* change the value to **2048** and click **Next**
-!IMAGE[huiz9pf5.png](huiz9pf5.png)
-1. [] At *Configure networking* change the value to **VmNAT**
-!IMAGE[b5p5ukeg.png](b5p5ukeg.png)
-1. [] At *Create virtual hard disk* click **Next**
-!IMAGE[a5i4ev46.png](a5i4ev46.png)
-1. [] At *Install option* select *Install an operating system from a bootable image file* and Browse... +++C:\\iso\\en_windows_10_business_editions_version_1809_updated_march_2019_x64_dvd_91476d5e.iso+++ and click **Next**
-!IMAGE[dt9ktnmj.png](dt9ktnmj.png)
-1. [] Click **Finish**
-!IMAGE[o0dka870.png](o0dka870.png)
-1. [] On the Hyper-V manager console, right-click **Test-Autopilot** and click Start
-!IMAGE[sgj2yd1x.png](sgj2yd1x.png)
-1. [] Right click on **Test-Autopilot** and click Connect…
-!IMAGE[e3bqsee7.png](e3bqsee7.png)
-1. [] Click the *Reset* button in the Virtual Machine Connection
-!IMAGE[7s9egllu.png](7s9egllu.png)
-1. [] Select **Reset**
-!IMAGE[3ljflgz7.png](3ljflgz7.png)
-1. [] Press a key to start
-!IMAGE[du660q50.png](du660q50.png)
-1. [] At Windows Setup click **Next**
-!IMAGE[9kqvlr63.png](9kqvlr63.png)
-1. [] Click **Install now**
-!IMAGE[7iyz3f7n.png](7iyz3f7n.png)
-1. [] Select **Windows 10 Enterprise** and click **Next**
-!IMAGE[gs9qdscs.png](gs9qdscs.png)
-1. [] Accept the license term and click **Next**
-!IMAGE[ag945e00.png](ag945e00.png)
-1. [] Select *Custom Install Windows only (advanced)*
-!IMAGE[qik23mgx.png](qik23mgx.png)
-1. [] At *Where do you want to install Windows* click **Next**
-!IMAGE[lp6itlaq.png](lp6itlaq.png)
-1. [] Wait for *Installing Windows* to complete
-!IMAGE[lfeew75s.png](lfeew75s.png)
-1. [] Click **Restart now**
-!IMAGE[xcvonmq4.png](xcvonmq4.png)
-> [!ALERT] If the installation is stuck, the virtual machine does not reboot, and you see a purple screen, click *Reset* from the VM Connection
-!IMAGE[66p37sk3.png](66p37sk3.png)
-
-Congratulations!
-You have successfully:
-- Installed Windows 10 RS3+ device to use Autopilot
-
-Click Next > to advance to the next exercise.
-
-===
-#Module 3, Lab 1, Exercise 2 - Capture and Test Auto Pilot
+#Module 3, Lab 1, Exercise 1 - Capture and Test Auto Pilot
 
 ##Scenario
 In this exercise you will:
@@ -953,23 +834,14 @@ In this exercise you will:
 - Create and apply Auto Pilot Profile. 
 - Modern Provision Device 
 
-1. [] On the *Let's start with region. is this right?*  Select the appropriate region and click **Yes**
-!IMAGE[nuv6erzq.png](nuv6erzq.png)
-1. [] At *is this the right keyboard layout?* Click **Yes**
-1. [] On the *want to add a second keyboard layout*, click **Skip**
-1. [] On the Network screen it may take some time, just wait
-1. [] Select **Domain join instead**
-!IMAGE[hiflxzhs.jpg](hiflxzhs.jpg)
-1. [] At *Who's going to use this PC?* type +++Admin+++
-1. [] At *Create a password* type: +++@lab.VirtualMachine(NYCPR2).Password+++
-1. [] At *Confirm your password* type: +++@lab.VirtualMachine(NYCPR2).Password+++
-1. [] At *Security questions* choose three questions, then type +++Lab+++ for the answer and click **Next**
-1. [] At *Make Cortana your personal assistant?* select **Accept**
-!IMAGE[6n0ocxb4.jpg](6n0ocxb4.jpg)
-1. [] At Do more accross devices with activity history select **Yes**
-!IMAGE[c7modbn0.jpg](c7modbn0.jpg)
-1. [] At *Choose privacy settings for your device* select **Accept**
-!IMAGE[l44rq0zh.jpg](l44rq0zh.jpg)
+1. [] Log on to @lab.VirtualMachine(NYCPR2).SelectLink using the following credentials:
+	- User name: Contoso\\Administrator
+	- Password: +++Pa$$w0rd+++
+1. [] Open the Hyper-V Manager console
+1. [] Start "Test-autopilot" virtual machine in Hyper-V Manager
+1. [] Log on to "Test-autopilot" virtual machine using the following credentials:
+	- User name: Admin
+	- Password: +++Pa$$w0rd+++
 1. [] When you are logged in, open Windows PowerShell (Admin) and type +++md C:\autopilot+++ and press Enter
 1. [] Type  +++ise+++ and press Enter
 !IMAGE[Screenshot](Screens/1gzdijyd.jpg)
@@ -1075,7 +947,7 @@ You have successfully:
 
 Click Next > to advance to the next exercise.
 ===
-#Module 3, Lab 1, Exercise 3 - Explore Co-Management Dashboard and Reporting
+#Module 3, Lab 1, Exercise 2 - Explore Co-Management Dashboard and Reporting
 
 ##Scenario
 In this exercise you will:
