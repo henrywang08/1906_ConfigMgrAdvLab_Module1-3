@@ -27,7 +27,7 @@ In this exercise you will:
 1. [] Click *Resources* tab, in the lab menu, and use the LAB Office 365 credentials specified under your Lab environment
 !IMAGE[rr8li18k.jpg](rr8li18k.jpg)
 
-> [!NOTE] These are your tenant credentials and you shall use it every time you sign-in a Cloud portal as admin
+	> [!NOTE] These are your tenant credentials and you shall use it every time you sign-in a Cloud portal as admin
 
 1. [] At *Stay signed in*, select *Don't show this again* and click **Yes**
 !IMAGE[1rq5rfi9.png](1rq5rfi9.png)
