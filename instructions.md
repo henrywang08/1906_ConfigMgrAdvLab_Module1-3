@@ -31,41 +31,72 @@ In this exercise you will:
 > [!NOTE] These are your tenant credentials and you shall use it every time you sign-in a Cloud portal as admin
 
 1. [] At *Stay signed in*, select *Don't show this again* and click **Yes**
+
 !IMAGE[1rq5rfi9.png](1rq5rfi9.png)
 
 1. [] Navigate to Billing and click *Licenses*
+
 !IMAGE[1Capture.PNG](1Capture.PNG)
+
 1. [] and confirm that you have available **Enterprise Mobility + Security E5** licenses
+
 !IMAGE[2Capture.PNG](2Capture.PNG)
+
 1. [] Go to Users > Active users
+
 !IMAGE[3Capture.PNG](3Capture.PNG)
+
 1. [] Click *MOD Administrator*
+
 !IMAGE[4Capture.PNG](4Capture.PNG)
+
 1. [] Click *Licenses and Apps*, select *Enterprise Mobility + Security E5* and then click *Save changes*
+
 !IMAGE[5Capture.PNG](5Capture.PNG)
+
 1. [] Close the *Licenses and Apps* blade and confirm that the EM+S license is now assigned to the MOD Administrator
+
 !IMAGE[7Capture.PNG](7Capture.PNG)
+
 1. [] Open a new tab in the browser and go to +++http://www.microsoftazurepass.com/+++
 1. [] Sign in (with your LAB Office365 credentials) - the **SIGN IN** link is in the top right corner of the page
+
 !IMAGE[ulhsc8lm.jpg](ulhsc8lm.jpg)
+
 1. [] Click **Confirm Microsoft Account**
+
 !IMAGE[Screenshot](Screens/wu35xgsn.jpg)
+
 1. [] Then paste the Azure Pass promo code specified under your Lab environment - *Resources* tab - and then click **Claim Promo Code**.
+
 !IMAGE[Screenshot](Screens/jgcmfsel.jpg)
+
 1. [] Wait a few moments, then click **Next** without changing any information
+
 !IMAGE[Screenshot](Screens/gw2yioor.jpg)
+
 1. [] Accept the Agreement and click **Sign-up**
+
 !IMAGE[Screenshot](Screens/ts2ery3x.jpg)
+
 >[!NOTE] if you see this message just be patient, this is very common, it will eventually work (approx. 5 minutes).
+
 !IMAGE[uc0c78oh.jpg](uc0c78oh.jpg)
 
 17. [] Select **Continue to Azure Portal website**
+
 !IMAGE[zuu3zj6m.jpg](zuu3zj6m.jpg)
+
 1. [] The Azure portal (https://portal.azure.com) will automatically open, click **Maybe later** to continue
+
 !IMAGE[Screenshot](Screens/ktk1ewes.jpg) 
+
 1. [] Navigate to All Services > Subscriptions
+
 !IMAGE[66mw3reo.png](66mw3reo.png)
+
 1. [] Click Subscriptions and confirm you have a valid Azure Pass
+
 !IMAGE[4.PNG](4.PNG)
 
 Congratulations! 
