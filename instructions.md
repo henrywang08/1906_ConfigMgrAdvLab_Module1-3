@@ -886,11 +886,11 @@ Click Next > to advance to the next Module.
 In this exercise you will:
 - Create a new Windows 10 VM 
 
-1. [] Log on to @lab.VirtualMachine(NYCCL2).SelectLink using the following credentials:
+1. [] Log on to @lab.VirtualMachine(NYCPR2).SelectLink using the following credentials:
 	- User name: Contoso\\Administrator
 	- Password: +++Pa$$w0rd+++
 1. [] Open the Hyper-V Manager console
-1. [] Right-click NYCCL2 > New > Virtual machine…
+1. [] Right-click NYCPR2 > New > Virtual machine…
 !IMAGE[ewgy4mii.png](ewgy4mii.png)
 1. [] At *Before You Begin* click **Next**
 !IMAGE[mheeybiw.png](mheeybiw.png)
@@ -961,8 +961,8 @@ In this exercise you will:
 1. [] Select **Domain join instead**
 !IMAGE[hiflxzhs.jpg](hiflxzhs.jpg)
 1. [] At *Who's going to use this PC?* type +++Admin+++
-1. [] At *Create a password* type: +++@lab.VirtualMachine(NYCCL2).Password+++
-1. [] At *Confirm your password* type: +++@lab.VirtualMachine(NYCCL2).Password+++
+1. [] At *Create a password* type: +++@lab.VirtualMachine(NYCPR2).Password+++
+1. [] At *Confirm your password* type: +++@lab.VirtualMachine(NYCPR2).Password+++
 1. [] At *Security questions* choose three questions, then type +++Lab+++ for the answer and click **Next**
 1. [] At *Make Cortana your personal assistant?* select **Accept**
 !IMAGE[6n0ocxb4.jpg](6n0ocxb4.jpg)
@@ -1049,7 +1049,7 @@ and click **Save**
 > [!NOTE] Note the different logon screen, with the Welcome to Contoso! this is a simple indicator that the machine has been recognized by the Autopilot service
 !IMAGE[jlz1m73y.png](jlz1m73y.png)
 
-54. [] Type +++@lab.VirtualMachine(NYCCL2).Password+++ as password and click **Next**
+54. [] Type +++@lab.VirtualMachine(NYCPR2).Password+++ as password and click **Next**
 1. [] Wait until is completed, during this time Autopilot will proceed with the rest of the information
 1. [] Logon as Mark then go to All Settings > Accounts> Access work or school > Click on Connected to Contoso's Azure AD > Info
 !IMAGE[j3s7ip00.jpg](j3s7ip00.jpg)
