@@ -303,26 +303,26 @@ NYCCFG
 proceed as follow:
 1. [] Open Internet Explorer and go to +++https://portal.azure.com+++
 1. [] Log-in as your tenant admin
-1. [] Click on Azure Active Directory > App registrations (Legacy)
+1. [] Click on Azure Active Directory > App registrations
 !IMAGE[l9e1akfc.jpg](l9e1akfc.jpg)
-1. [] Toggle My Apps to *All Apps* and click on **Contoso Azure**
+1. [] Click on **Contoso Azure**
 !IMAGE[njjed5tv.jpg](njjed5tv.jpg)
 1. [] Open Notepad
 1. [] Copy the ApplicationID and ObjectID into Notepad
 !IMAGE[odtnjisg.jpg](odtnjisg.jpg)
-1. [] Click on Settings > Keys 
+1. [] Click on Certificates & secrets, click "+ New client secret"
 1. [] Enter +++ConfigMgr+++ as key description and change the duration to 1 year then click Save
 !IMAGE[8ft2gey1.jpg](8ft2gey1.jpg)
 1. [] Copy the generated key into Notepad
 !IMAGE[5qwmpp4w.jpg](5qwmpp4w.jpg)
-1. [] Go to Settings > Required Permission
+1. [] Go to API Permission 
 !IMAGE[y1bjh8ne.jpg](y1bjh8ne.jpg)
-1. [] Click on +Add
-1. [] Select **Windows Azure Active Directory**
+1. [] Click on +Add a permission
+1. [] Select **Microsoft Graph**
 !IMAGE[za0pglpk.jpg](za0pglpk.jpg)
-1. [] At *Site permission* select *read directory data* under **APPLICATION PERMISSION**
+1. [] At *Request API Permissions* select *Directory.Read.All* (It is previously called "Read direcotory data") under **Application Permissions** type
 !IMAGE[06mh0pak.jpg](06mh0pak.jpg)
-1. [] Click **Done**
+1. [] Click 'X' to close the window
 1. [] Go to Azure Active Directory > Properties and copy the Directory ID into Notepad as well
 !IMAGE[q3wyayr8.jpg](q3wyayr8.jpg)
 1. [] Go back to the configuration Console and click **OK** then the *Failed to Sign in to Azure* window
