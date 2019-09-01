@@ -184,7 +184,7 @@ and click **Add**.
 1. [] Click OK in the UPN Suffixes tab and close Active Directory Domains and Trusts
 1. [] From Server Manager > Tools open **Active Directory Users and Computers**
 !IMAGE[Screenshot](Screens/wypuld2x.jpg)
-1. [] In Active Directory Users and Computers, expand contoso.com and click on the *Users* container
+1. [] In Active Directory Users and Computers, expand contoso.com and click on the *Workshop Accounts* OU
 1. [] Select the user **Mark Steele**
 1. [] Right-click Mark Steele and click **Properties**
 1. [] Click the Account tab and change the UPN suffix of the user to the Microsoft Office 365 domain name <Domain Name>.onmicrosoft.com that you added in Active Directory Domains and Trusts
@@ -243,11 +243,11 @@ enter +++Contoso\administrator+++ and +++Pa$$w0rd+++ and click **OK**, then clic
 1. [] Log on to @lab.VirtualMachine(NYCCL1).SelectLink using the following credentials:   
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
-1. [] Wait approx. 5 minutes then open +++https://portal.office.com+++ and navigate to Admin > Active Users and confirm Mark Steele has been synchronized
+1. [] Wait approx. 5 minutes then open +++https://portal.office.com+++ and navigate to Admin > Users > Active Users and confirm Mark Steele has been synchronized
 !IMAGE[skvwa9d8.png](skvwa9d8.png)
-1. [] Select Mark Steele and click **Edit** under Product licenses, then select a Location and assign an *Enterprise Mobility + Security E5* license
+1. [] Select Mark Steele, click "License and Apps" tab. Select location as "United States", select and enable "Enterprise Mobility + Security E5".
 !IMAGE[zmlul7np.jpg](zmlul7np.jpg)
-1. [] Click **Save**, then **Close** twice
+1. [] Click "X" at top right corner to close the window.
 
 Congratulations! 
 You have successfully:
