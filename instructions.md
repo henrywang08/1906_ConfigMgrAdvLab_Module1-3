@@ -451,26 +451,23 @@ and click Register
 ###  Cloud Management Gateway Deployment
 1. [] Go to Administration Workspace on the Configuration Manager Console.
 1. [] Navigate to Updates and Servicing > Features
-1. [] Select Cloud Management Gateway and right-click to *Turn on*
+1. [] Verify Cloud Management Gateway feature is turned ON
 !IMAGE[Screenshot](Screens/yq2w5yra.jpg)
-1. [] Click yes when prompted
-!IMAGE[Screenshot](Screens/fzyvqlov.jpg)
-1. [] Close the console, wait approx. 20 seconds and open the Configmgr console again
 1. [] Go to Administration workspace > Cloud Services 
 1. [] Right-click on Cloud Management Gateway and click **Create Cloud Management Gateway**
 1. [] On Subscription admin account click **Sign-In...** and enter your Office365 Global Admin account (e.g. admin@lod....onmicrosoft.com)
 1. [] Wait until the App Information will be populated and click **Next**
-1. [] Change the Resource Group to **Create New**
-!IMAGE[Screenshot](Screens/tcmvegdc.jpg)
 1. []  On the Settings page of the wizard, first click Browse and select the .PFX file for the CMG server authentication certificate. The name from this certificate populates the required Service FQDN and Service name fields. Type +++\\\\NYCCL1\C$\\USers\\Administrator\\contosocmg-pk.pfx+++ and click **Open**
 1. [] Type +++Pa$$w0rd+++ for the password and click **OK**
 !IMAGE[Screenshot](Screens/w2obnrtc.jpg)
+1. [] Change the Resource Group to **Create New**
 1. [] Click on **Certificates...** and then click **Add** and browse for the +++\\\\NYCCL1\C$\\Users\\Administrator\\ContosoRootCA.cer+++ and click **Open**, then click **OK**
 !IMAGE[Screenshot](Screens/pykfvvbd.jpg)
 1. [] UNCHECK the **Verify Client Certificate Revocation** 
 1. [] Check **Allow CMG to function as cloud distribution point..** and click **Next**
-1. [] Leave default and click **Next** twice then **Close**
 !IMAGE[vcqj2i9g.jpg](vcqj2i9g.jpg)
+1. [] Leave default and click **Next** twice then **Close**
+
 
 Configuration Manager starts setting up the service. After you close the wizard, it will take between five to 15 minutes to provision the service completely in Azure. Check the Status column for the new CMG to determine when the service is ready. 
 !IMAGE[m0lg8chn.jpg](m0lg8chn.jpg)
