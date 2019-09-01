@@ -836,6 +836,7 @@ In this exercise you will:
 1. [] Start "Test-autopilot" virtual machine in Hyper-V Manager. 
 1. [] Right click "Test-autopilot" virtual machine in Hyper-V Manager, click "Connect..." 
 1. [] Wait till the VM shows "Let's start with region. Is this right?". Press Shift+F10 key to open a command window in the VM. 
+!IMAGE[ieqqoc2t.jpg](ieqqoc2t.jpg)
 1. [] Type +++powershell.exe+++ and press Enter
 1. [] Type +++set-executionpolicy unrestricted+++ and press Enter
 1. [] Confirm with **Yes**
