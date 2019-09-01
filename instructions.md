@@ -569,9 +569,9 @@ In this exercise you will:
 	   	- User name: Contoso\\Administrator  
 		- Password: +++Pa$$w0rd+++
 1. []  On Server Manager Click Tools then Active Directory Users and Computers. 
-1. [] Right-click on Users > New > Group
+1. [] Right-click on Workshop Accounts > New > Group
 !IMAGE[Screenshot](Screens/oc2da5uo.jpg)
-1. [] type +++Lab SCCM Install Group+++ as group name and click OK
+1. [] Type +++Lab SCCM Install Group+++ as group name and click OK
 1. []  Right-click the new group and select properties > Members > click add and enter **Mark Steele** and click OK
 !IMAGE[Screenshot](Screens/r130rfs0.jpg)
 
@@ -845,7 +845,7 @@ In this exercise you will:
 1. [] Confirm with **Yes**
 1. [] Type +++cd c:\autopilot+++ and press Enter
 1. [] Type +++Get-WindowsAutoPilotInfo.ps1 -OutputFile c:\autopilot\testdevice.csv+++ and press Enter
-1. [] Type +++net use * \\nyccl1.contoso.com\c$+++ and press Enter, using the following credentials:
+1. [] Type +++net use * \\\\nyccl1.contoso.com\c$+++ and press Enter, using the following credentials:
 	- User name: +++Contoso\\Administrator+++
 	- Password: +++Pa$$w0rd+++
 1. [] Type +++md z:\autopilot+++ and press Enter
