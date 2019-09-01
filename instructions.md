@@ -836,24 +836,26 @@ In this exercise you will:
 1. [] Log on to @lab.VirtualMachine(NYCPR2).SelectLink using the following credentials:
 	- User name: Contoso\\Administrator
 	- Password: +++Pa$$w0rd+++
+1. [] When you are logged in, open Windows PowerShell (Admin) 
+1. [] Type +++New-VM -Name Test-autopilot -MemoryStartupBytes 4GB -BootDevice VHD -VHDPath E:\VM\Test-autopilot.vhdx -path E:\VM -Generation 2 -SwitchName VmNAT+++ and press Enter
+1. [] Type +++Set-VMProcessor Test-autopilot -Count 2 -CompatibilityForMigrationEnabled $true+++ and press Enter
 1. [] Open the Hyper-V Manager console
-1. [] Start "Test-autopilot" virtual machine in Hyper-V Manager
-1. [] Log on to "Test-autopilot" virtual machine using the following credentials:
-	- User name: Admin
-	- Password: +++Pa$$w0rd+++
-1. [] When you are logged in, open Windows PowerShell (Admin) and type +++md C:\autopilot+++ and press Enter
-1. [] Type  +++ise+++ and press Enter
-!IMAGE[Screenshot](Screens/1gzdijyd.jpg)
-1. [] Type +++save-script -Name Get-WindowsAutoPilotInfo -Path c:\autopilot+++ and press Enter
-1. [] Click **Yes** when prompted
-!IMAGE[Screenshot](Screens/hvlgtzks.jpg)
-1. [] Type +++install-script -Name Get-WindowsAutoPilotInfo+++ and press Enter
-1. [] Click **Yes** when prompted
-1. [] Confirm with **Yes**
-!IMAGE[Screenshot](Screens/bgrv335a.jpg)
+1. [] Start "Test-autopilot" virtual machine in Hyper-V Manager. 
+1. [] Right click "Test-autopilot" virtual machine in Hyper-V Manager, click "Connect..." 
+1. [] Wait till the VM shows "Let's start with region. Is this right?". Press Shift+F10 key to open a command window in the VM. 
+1. [] Type +++powershell.exe+++ and press Enter
 1. [] Type +++set-executionpolicy unrestricted+++ and press Enter
 1. [] Confirm with **Yes**
+1. [] Type +++cd c:\autopilot+++ and press Enter
 1. [] Type +++Get-WindowsAutoPilotInfo.ps1 -OutputFile c:\autopilot\testdevice.csv+++ and press Enter
+1. [] Type +++net use * \\nyccl1.contoso.com\c$+++ and press Enter, using the following credentials:
+	- User name: +++Contoso\\Administrator+++
+	- Password: +++Pa$$w0rd+++
+1. [] Type +++md z:\autopilot+++ and press Enter
+1. [] Type +++copy c:\autopilot\testdevice.csv z:\autopilot+++ and press Enter
+1. [] Log on to @lab.VirtualMachine(NYCCL1).SelectLink using the following credentials:
+	- User name: Contoso\\Administrator
+	- Password: +++Pa$$w0rd+++
 1. [] Open Microsoft Edge or Internet Explorer and go to +++https://devicemanagement.microsoft.com+++
 1. [] Log-in as Global Admin
 1. [] Go to Device Enrollment > Windows Enrollment and select **Devices**
