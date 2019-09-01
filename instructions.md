@@ -687,12 +687,8 @@ Click Next > to advance to the next exercise.
 !IMAGE[46258klj.jpg](46258klj.jpg)
 1. [] Click on Windows Enrollment > Windows Hello for Business
 !IMAGE[4km9kers.jpg](4km9kers.jpg)
-1. [] Click on *Properties*
-!IMAGE[l1i7muf9.jpg](l1i7muf9.jpg)
-1. [] Click on *Settings*
-!IMAGE[favr52us.png](favr52us.png)
 1. [] Change *Configure Windows Hello for Business* to **Disabled** and click **Save**
-!IMAGE[ieqqoc2t.jpg](ieqqoc2t.jpg)
+!IMAGE[l1i7muf9.jpg](l1i7muf9.jpg)
 1. Select Client apps > Apps > Click on **+Add**
 !IMAGE[icsc7mr9.jpg](icsc7mr9.jpg)
 1. []  On App type: Select Line-of-business app
@@ -795,7 +791,7 @@ Click Next > to advance to the next exercise.
 !IMAGE[rukywd5f.jpg](rukywd5f.jpg)
 1. [] Open *Control Panel* > *System and Security* and confirm no ConfigMgr client is installed
 !IMAGE[Screenshot](Screens/nntpug2y.jpg)
-1. [] Click on Work or School > Connected to Contoso MDM > Info
+1. [] Click on Work or School > Work or school account > Info
 !IMAGE[u5mxhsfs.jpg](u5mxhsfs.jpg)
 1. [] Click on Sync
 !IMAGE[Screenshot](Screens/pw1ftxdo.jpg)
@@ -877,24 +873,23 @@ In this exercise you will:
 1. [] At Members, add the device name that starts with a serial number, then click **Select** and click **Create**
 !IMAGE[bbljck2m.png](bbljck2m.png)
 1. [] Go back to Device enrollment > Windows enrollment >  Deployment Profiles
-!IMAGE[6jexuzl6.jpg](6jexuzl6.jpg)
 1. [] Click **+Create Profile**:
 	- Name: +++Lab+++
-	- Deployment mode: User-driven
+!IMAGE[6jexuzl6.jpg](6jexuzl6.jpg)
+1. [] Click *Next* for *out-of-box experience (OOBE)*:
+	- Deployment mode: **User-Driven**
 	- Join to Azure AD as: **Azure AD joined**
-1. [] Click on *out-of-box experience (OOBE)*:
-	- EULA: **Hide**
+	- Microsoft Software License Terms: **Hide**
 	- Privacy Settings: **Hide**
 	- Hide change account option: **Hide**
 	- Account Type: **Administrator**
-	- Apply computer name template (Windows Insider only): **No**
+	- Apply device name template: **No**
 	!IMAGE[46zdyqbh.jpg](46zdyqbh.jpg)
-1. [] Click **Ok**, then click **Create**
-1. [] Click Assignments > +Select groups to include, and select the *Autopilot* group, then click **Select**
+1. [] Click **Next** for **Scope tags**
+1. [] In **Assignments**  +Select groups to include, and select the *Autopilot* group, then click **Select**
 !IMAGE[78alc90e.png](78alc90e.png)
-and click **Save**
+1. [] Click **Next**. Review the information, and click **Create**
 !IMAGE[cdts5pnu.png](cdts5pnu.png)
-
 1. [] Go to Device enrollment > Windows enrollment > Devices
 1. [] Click **Sync** and then **Refresh**
 
