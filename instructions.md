@@ -728,7 +728,7 @@ Click Next > to advance to the next exercise.
 1. [] Under select a file, browse for  +++C:\\Users\\Administrator\ContosoRootCa.cer+++ and click **Open**, then click **OK**
 !IMAGE[Screenshot](Screens/wwcanguo.jpg)
 
-> [!KNOWLEDGE] The Root CA is needed for clients that are not AD joined, and because **For LAB purpose only** we are using an internal certificate for the CDP and CMP
+> [!KNOWLEDGE] The Root CA is needed for clients that are not AD joined, and because **For LAB purpose only** we are using an internal certificate for the CMG
 
 39. [] Click **Create** then select Assignment
 !IMAGE[Screenshot](Screens/tjvkay5r.jpg)
